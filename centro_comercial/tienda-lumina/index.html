@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lúmina — Galería Central</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .wrap{ max-width: 1000px; margin: 0 auto; padding: 48px 28px 100px; }
+  .back{ display: inline-block; font-size: 0.9rem; color: rgba(244,235,217,0.6); text-decoration: none; margin-bottom: 36px; border-bottom: 1px solid rgba(244,235,217,0.3); }
+  .back:hover{ color: var(--brass); border-color: var(--brass); }
+  h1.display{ font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500; margin: 0 0 10px; }
+  .tag{ color: var(--brass); font-size: 0.95rem; margin: 0 0 40px; }
+  .products{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 620px){ .products{ grid-template-columns: 1fr; } }
+  .card{ background: var(--indigo-deep); border: 1px solid rgba(244,235,217,0.14); padding: 20px; }
+  .swatch{ height: 150px; margin-bottom: 16px; background: linear-gradient(135deg, #C08A3E, #E8C9A0); }
+  .card h2{ font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.15rem; margin: 0 0 6px; }
+  .card p{ margin: 0; color: rgba(244,235,217,0.7); font-size: 0.95rem; }
+  .price{ color: var(--brass) !important; margin-top: 8px !important; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Volver al directorio</a>
+    <h1 class="display">Lúmina</h1>
+    <p class="tag">Belleza y cuidado personal</p>
+
+    <div class="products">
+      <div class="card">
+        <div class="swatch"></div>
+        <h2>Crema hidratante</h2>
+        <p>Fórmula ligera, sin fragancia</p>
+        <p class="price">$280</p>
+      </div>
+      <div class="card">
+        <div class="swatch"></div>
+        <h2>Set de brochas</h2>
+        <p>5 piezas, cerdas suaves</p>
+        <p class="price">$410</p>
+      </div>
+      <div class="card">
+        <div class="swatch"></div>
+        <h2>Perfume floral</h2>
+        <p>50ml, notas de jazmín</p>
+        <p class="price">$650</p>
+      </div>
+      <div class="card">
+        <div class="swatch"></div>
+        <h2>Bálsamo labial</h2>
+        <p>Con manteca de karité</p>
+        <p class="price">$95</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
