@@ -1,57 +1,465 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Circuito — Galería Central</title>
-<link rel="stylesheet" href="../style.css">
-<style>
-  .wrap{ max-width: 1000px; margin: 0 auto; padding: 48px 28px 100px; }
-  .back{ display: inline-block; font-size: 0.9rem; color: rgba(244,235,217,0.6); text-decoration: none; margin-bottom: 36px; border-bottom: 1px solid rgba(244,235,217,0.3); }
-  .back:hover{ color: var(--brass); border-color: var(--brass); }
-  h1.display{ font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500; margin: 0 0 10px; }
-  .tag{ color: var(--brass); font-size: 0.95rem; margin: 0 0 40px; }
-  .products{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 620px){ .products{ grid-template-columns: 1fr; } }
-  .card{ background: var(--indigo-deep); border: 1px solid rgba(244,235,217,0.14); padding: 20px; }
-  .swatch{ height: 150px; margin-bottom: 16px; background: linear-gradient(135deg, #2F4A6E, #5C89B0); }
-  .card h2{ font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.15rem; margin: 0 0 6px; }
-  .card p{ margin: 0; color: rgba(244,235,217,0.7); font-size: 0.95rem; }
-  .price{ color: var(--brass) !important; margin-top: 8px !important; font-weight: 500; }
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <a class="back" href="../index.html">← Volver al directorio</a>
-    <h1 class="display">Circuito</h1>
-    <p class="tag">Tecnología</p>
 
-    <div class="products">
-      <div class="card">
-        <div class="swatch"></div>
-        <h2>Audífonos inalámbricos</h2>
-        <p>Cancelación de ruido, 20h de batería</p>
-        <p class="price">$650</p>
-      </div>
-      <div class="card">
-        <div class="swatch"></div>
-        <h2>Cargador rápido 65W</h2>
-        <p>Doble puerto USB-C</p>
-        <p class="price">$299</p>
-      </div>
-      <div class="card">
-        <div class="swatch"></div>
-        <h2>Mouse ergonómico</h2>
-        <p>Inalámbrico, silencioso</p>
-        <p class="price">$420</p>
-      </div>
-      <div class="card">
-        <div class="swatch"></div>
-        <h2>Hub USB-C</h2>
-        <p>7 puertos, HDMI incluido</p>
-        <p class="price">$350</p>
-      </div>
+<!-- Hace que la página se adapte correctamente a celulares -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vestir Urbano — Galería Central</title>
+
+<!-- Archivo CSS principal -->
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 28px 100px;
+}
+
+
+/* =========================
+   BOTÓN PARA REGRESAR
+========================= */
+
+.back {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: rgba(244,235,217,0.6);
+    text-decoration: none;
+    margin-bottom: 36px;
+    border-bottom: 1px solid rgba(244,235,217,0.3);
+    padding-bottom: 4px;
+}
+
+.back:hover {
+    color: var(--brass);
+    border-color: var(--brass);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1.display {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+
+/* =========================
+   CATEGORÍA
+========================= */
+
+.tag {
+    color: var(--brass);
+    font-size: 0.95rem;
+    margin: 0 0 40px;
+}
+
+
+/* =========================
+   CONTENEDOR DE PRODUCTOS
+========================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card {
+    background: var(--indigo-deep);
+    border: 1px solid rgba(244,235,217,0.14);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* =========================
+   IMÁGENES DE PRODUCTOS
+========================= */
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 16px;
+
+    /* La imagen se adapta sin deformarse */
+    object-fit: contain;
+
+    display: block;
+
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+}
+
+
+/* =========================
+   NOMBRE DEL PRODUCTO
+========================= */
+
+.card h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 0 0 6px;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.card p {
+    margin: 0;
+    color: rgba(244,235,217,0.7);
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   PRECIO
+========================= */
+
+.price {
+    color: var(--brass) !important;
+    margin-top: 8px !important;
+    font-weight: 500;
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+========================= */
+
+@media (max-width: 620px) {
+
+    .wrap {
+        padding: 30px 18px 70px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .product-image {
+        height: 250px;
+    }
+
+    h1.display {
+        font-size: 2.2rem;
+    }
+
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULARES
+   MUY PEQUEÑOS
+========================= */
+
+@media (max-width: 400px) {
+
+    .wrap {
+        padding: 25px 14px 60px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+```
+<!-- BOTÓN PARA REGRESAR -->
+<a class="back" href="../index.html">
+    ← Volver al directorio
+</a>
+
+
+<!-- TÍTULO DE LA TIENDA -->
+<h1 class="display">Vestir Urbano</h1>
+
+<p class="tag">
+    Ropa y moda
+</p>
+
+
+<!-- =========================
+     PRODUCTOS
+========================== -->
+
+<div class="products">
+
+
+    <!-- PRODUCTO 1 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/chaqueta.jpg"
+            alt="Chaqueta de mezclilla"
+        >
+
+        <h2>Chaqueta de mezclilla</h2>
+
+        <p>
+            Corte recto, forro interior
+        </p>
+
+        <p class="price">
+            $890
+        </p>
+
     </div>
-  </div>
+
+
+    <!-- PRODUCTO 2 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="Ropa/Playera Cuello Redondo Manga Corta para Caballero · 100% Algodón · Royal.jpg"
+            alt="Camisa de lino"
+        >
+
+        <h2>Camisa de lino</h2>
+
+        <p>
+            Manga larga, tela fresca
+        </p>
+
+        <p class="price">
+            $450
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 3 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/pantalon.jpg"
+            alt="Pantalón recto"
+        >
+
+        <h2>Pantalón recto</h2>
+
+        <p>
+            Algodón grueso, varios colores
+        </p>
+
+        <p class="price">
+            $620
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 4 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/sueter.jpg"
+            alt="Suéter de punto"
+        >
+
+        <h2>Suéter de punto</h2>
+
+        <p>
+            Cuello redondo, tejido grueso
+        </p>
+
+        <p class="price">
+            $540
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 5 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto5.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 6 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto6.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 7 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto7.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 8 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto8.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 9 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto9.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTO 10 -->
+
+    <div class="card">
+
+        <img 
+            class="product-image"
+            src="imagenes/producto10.jpg"
+            alt="Producto de Vestir Urbano"
+        >
+
+        <h2>Nuevo producto</h2>
+
+        <p>
+            Descripción del producto
+        </p>
+
+        <p class="price">
+            $000
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</div>
+
 </body>
 </html>
